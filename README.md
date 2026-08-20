@@ -13,7 +13,25 @@
 
 需要 Node.js 18 或更高版本。
 
+直接安装命令行工具：
+
 ```bash
+npm install -g github:oumomomo/video-production-workflow
+video-flow doctor
+```
+
+同时安装 Codex Skill：
+
+```bash
+git clone https://github.com/oumomomo/video-production-workflow.git
+cp -R video-production-workflow/skills/video-production-workflow ~/.codex/skills/video-production-workflow
+```
+
+也可以克隆仓库后从本地安装：
+
+```bash
+git clone https://github.com/oumomomo/video-production-workflow.git
+cd video-production-workflow
 npm install -g .
 video-flow doctor
 ```
@@ -63,4 +81,3 @@ video-flow next --project ./my-video
 ## 命令能做与不能做的事
 
 命令能够检查脚本哈希、文件完整性、分镜字段、自检证据和基线版本。它不能判断视频是否高级、是否真正好看、是否有吸引力或是否完全消除了 AI 味；这些仍需要正常速度人工观看和用户批准。
-
