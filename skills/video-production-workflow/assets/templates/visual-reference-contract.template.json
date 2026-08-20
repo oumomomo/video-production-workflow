@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "visualWorld": {
+    "sourceMaterials": [],
+    "continuityMechanism": "",
+    "colorSource": {
+      "kind": "",
+      "sourceId": "",
+      "evidence": "",
+      "rule": ""
+    },
+    "genericAIPaletteAllowed": false
+  },
+  "referencePolicy": {
+    "selectedReferences": [],
+    "originalReason": null
+  },
+  "shotBindings": [],
+  "note": "先从真实材料和已选参考建立视觉世界，再设计构图、动效与配色。真实素材本身不等于视觉合同。"
+}

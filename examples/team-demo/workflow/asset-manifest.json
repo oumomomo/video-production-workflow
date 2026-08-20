@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "assetId": "brand-real-product-ui-001",
+      "shotId": "A01",
+      "mode": "reuse",
+      "status": "accepted",
+      "changes": "只裁切到本镜需要的真实窗口区域"
+    },
+    {
+      "assetId": "motion-object-relay-001",
+      "shotId": "A02",
+      "mode": "remix",
+      "status": "accepted",
+      "changes": "保留对象接力语法，替换为真实单元格与工作页面"
+    }
+  ],
+  "rules": {
+    "referenceByStableId": true,
+    "noAbsoluteLocalPaths": true,
+    "reviewOnlyIsNotReusable": true,
+    "acceptedInOneProjectIsNotGloballyRecommended": true
+  }
+}

@@ -9,6 +9,7 @@ const CLI = path.join(ROOT, 'skills', 'video-production-workflow', 'scripts', 'v
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'video-flow-test-'));
 const script = path.join(temp, 'script.md');
 const project = path.join(temp, 'project');
+const library = path.join(temp, 'library');
 
 function run(args, expected = 0) {
   const result = spawnSync(process.execPath, [CLI, ...args], {encoding: 'utf8'});
@@ -23,6 +24,24 @@ try {
   run(['doctor', '--json']);
   run(['init', '--project', project, '--script', script, '--title', '测试视频', '--json']);
   run(['verify', '--project', project, '--json']);
+  if (!fs.existsSync(path.join(project, 'workflow', 'asset-manifest.json'))) throw new Error('asset manifest was not created');
+
+  run(['library-init', '--library', library, '--name', '测试素材库', '--id', 'team-test', '--json']);
+  const sourceAsset = path.join(temp, 'reference.mp4');
+  fs.writeFileSync(sourceAsset, 'reference-video-bytes', 'utf8');
+  run([
+    'asset-register', '--library', library, '--id', 'ref-001', '--name', '对象接力参考',
+    '--type', 'reference-video', '--uri', 'team://references/ref-001.mp4', '--license', 'review-only',
+    '--status', 'review-only', '--tags', '对象接力,转场', '--source-file', sourceAsset, '--json',
+  ]);
+  const search = run(['asset-search', '--library', library, '--query', '对象接力', '--json']);
+  if (!search.stdout.includes('ref-001')) throw new Error('asset search did not return registered asset');
+  if (!fs.existsSync(path.join(library, 'derived', 'ref-001', 'analysis-pack.json'))) throw new Error('analysis pack was not created');
+  const localPathRejected = run([
+    'asset-register', '--library', library, '--id', 'ref-local', '--name', '错误路径',
+    '--type', 'reference-video', '--uri', sourceAsset, '--license', 'review-only', '--json',
+  ], 1);
+  if (!localPathRejected.stderr.includes('本地绝对路径')) throw new Error('absolute local asset URI was not blocked');
 
   const locked = path.join(project, 'source', 'approved-script.md');
   fs.appendFileSync(locked, '未经授权的改动', 'utf8');
@@ -46,8 +65,35 @@ try {
   }];
   fs.writeFileSync(storyboardPath, `${JSON.stringify(storyboard, null, 2)}\n`, 'utf8');
 
-  for (const id of ['preserveApprovedBaseline', 'scriptMatch', 'rhythm', 'composition', 'aesthetic', 'textDensity']) {
-    run(['check-set', '--project', project, '--id', id, '--status', 'pass', '--evidence', `test:${id}`, '--json']);
+  const visualContractPath = path.join(project, 'workflow', 'visual-reference-contract.json');
+  const visualContract = JSON.parse(fs.readFileSync(visualContractPath, 'utf8'));
+  visualContract.status = 'ready';
+  visualContract.visualWorld.sourceMaterials = [{
+    id: 'real-ui-001', type: 'real-product-recording', source: 'team://product/real-ui-001.mp4', evidence: 'asset:real-ui-001',
+  }];
+  visualContract.visualWorld.continuityMechanism = '同一个真实数据对象贯穿镜头';
+  visualContract.visualWorld.colorSource = {
+    kind: 'real-material', sourceId: 'real-ui-001', evidence: 'frame-review:001', rule: '只取真实界面和现场材料中已有颜色',
+  };
+  visualContract.referencePolicy.selectedReferences = [{
+    id: 'ref-001', source: 'team://references/ref-001.mp4', evidence: 'contact-sheet:ref-001',
+    inherit: ['对象接力'], change: ['替换原品牌和原文'], reject: ['原片表面配色'],
+  }];
+  visualContract.shotBindings = [{
+    shotId: 'A01', origin: 'remix', materialIds: ['real-ui-001'], referenceIds: ['ref-001'],
+  }];
+  fs.writeFileSync(visualContractPath, `${JSON.stringify(visualContract, null, 2)}\n`, 'utf8');
+  run(['visual-contract', '--project', project, '--json']);
+
+  const aiAestheticPass = run([
+    'check-set', '--project', project, '--id', 'aesthetic', '--status', 'pass',
+    '--evidence', 'self:AI 自评审美通过', '--json',
+  ], 1);
+  if (!aiAestheticPass.stderr.includes('不得由 AI 自行判定通过')) throw new Error('AI aesthetic approval was not blocked');
+
+  for (const id of ['preserveApprovedBaseline', 'scriptMatch', 'visualReferenceContract', 'rhythm', 'composition', 'aesthetic', 'textDensity']) {
+    const evidence = ['aesthetic', 'textDensity'].includes(id) ? `human:test:${id}` : `test:${id}`;
+    run(['check-set', '--project', project, '--id', id, '--status', 'pass', '--evidence', evidence, '--json']);
   }
   run(['audit', '--project', project, '--stage', 'storyboard', '--json']);
   run([
@@ -69,8 +115,11 @@ try {
     targetedRevision: true,
     baselineRecorded: true,
     nextStepReported: true,
+    teamAssetRegistry: true,
+    analysisCacheInitialized: true,
+    absoluteAssetPathBlocked: true,
+    humanReviewGate: true,
   }}, null, 2));
 } finally {
   fs.rmSync(temp, {recursive: true, force: true});
 }
-

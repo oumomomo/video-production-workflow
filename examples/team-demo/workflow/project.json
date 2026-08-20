@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "title": "团队示范：对象接力",
+  "platforms": ["douyin", "xiaohongshu"],
+  "phase": "candidate-review",
+  "scriptLock": "workflow/script-lock.json",
+  "storyboard": "workflow/storyboard.json",
+  "storyboardSelfCheck": "reviews/storyboard-self-check.json",
+  "assetManifest": "workflow/asset-manifest.json",
+  "visualReferenceContract": "workflow/visual-reference-contract.json",
+  "currentBaseline": {
+    "relativePath": "renders/candidate-v1.manifest.json",
+    "sha256": "a984a0091425b21752b8b23de1196b92a56c1851615070500c5f361c867288f6",
+    "scope": "示范项目结构与交接字段",
+    "status": "selected-baseline",
+    "note": "示范仓库不包含视频二进制；不代表创意或最终成片批准。"
+  },
+  "createdAt": "2026-08-20T00:00:00.000Z",
+  "updatedAt": "2026-08-20T00:00:00.000Z",
+  "events": [
+    {"at": "2026-08-20T00:00:00.000Z", "type": "project_initialized_and_script_locked"},
+    {"at": "2026-08-20T00:00:00.000Z", "type": "storyboard_self_checked"},
+    {"at": "2026-08-20T00:00:00.000Z", "type": "candidate_recorded_without_media_binary"}
+  ]
+}

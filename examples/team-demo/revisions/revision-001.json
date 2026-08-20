@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "R001",
+  "shotId": "A02",
+  "baseline": "V1",
+  "problem": "两个结果页面出现后停留太短",
+  "keep": "真实单元格、两个工作页面、对象接力方向",
+  "change": "延长结果页面的正常速度可读停留",
+  "forbid": "增加新卡片、换背景、修改A01",
+  "status": "applied",
+  "createdAt": "2026-08-20T00:00:00.000Z",
+  "rule": "只修改 change 描述的范围；keep 和 forbid 未获新授权前不可改变。"
+}

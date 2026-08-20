@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "status": "optimized",
+  "scriptSegments": [
+    {
+      "id": "S001",
+      "text": "这不是又一个会聊天的窗口。",
+      "timing": {"startSeconds": 0, "endSeconds": 2.4},
+      "productionType": "word-card-to-screen"
+    },
+    {
+      "id": "S002",
+      "text": "你改动一处数据，多个工作页面会一起更新。",
+      "timing": {"startSeconds": 2.4, "endSeconds": 7.2},
+      "productionType": "screen-recording-and-animation"
+    }
+  ],
+  "shots": [
+    {
+      "id": "A01",
+      "scriptSegmentIds": ["S001"],
+      "type": "word-card",
+      "visualEvent": "真实聊天窗口快速收拢为一个次要入口，为下一镜的数据对象让位。",
+      "visualLead": "正在收拢的真实窗口",
+      "transitionIn": "黑场中由真实窗口边缘进入",
+      "transitionOut": "窗口收拢位置与下一镜源单元格共享几何中心",
+      "materials": ["获准使用的真实产品界面"],
+      "avoid": ["漂浮玻璃卡片", "无意义英文状态标签"],
+      "acceptance": ["正常速度能读完字卡", "窗口只是让位而非重复解释口播"]
+    },
+    {
+      "id": "A02",
+      "scriptSegmentIds": ["S002"],
+      "type": "screen-recording-and-animation",
+      "visualEvent": "一个真实单元格被修改，两个工作页面依次显现同一变化结果。",
+      "visualLead": "被修改的真实数据对象",
+      "transitionIn": "沿用上一镜几何中心落到源单元格",
+      "transitionOut": "两个页面稳定停留后由共同数据对象收束",
+      "materials": ["真实表格录屏", "真实工作页面", "同一数据对象"],
+      "avoid": ["假仪表盘", "伪数据", "说明型箭头关系框"],
+      "acceptance": ["能看清一次修改和两个真实结果", "结果出现后至少保留可读停留", "没有第二次重复弹出"]
+    }
+  ],
+  "rules": {
+    "scriptIsReadOnly": true,
+    "oneSentenceDoesNotEqualOneShot": true,
+    "nonWordCardShotsNeedAVisualEvent": true,
+    "localFeedbackMustNotChangeUnrelatedShots": true
+  },
+  "createdAt": "2026-08-20T00:00:00.000Z"
+}

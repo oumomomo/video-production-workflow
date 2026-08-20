@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "checks": {
+    "preserveApprovedBaseline": {"status": "pass", "evidence": "脚本哈希一致，未产生改稿副本", "note": null},
+    "scriptMatch": {"status": "pass", "evidence": "两个脚本段均被镜头覆盖", "note": null},
+    "visualReferenceContract": {"status": "pass", "evidence": "workflow/visual-reference-contract.json 已绑定真实材料、配色来源、参考继承/改变/拒绝项和全部镜头", "note": null},
+    "rhythm": {"status": "pass", "evidence": "正常速度检查；结果出现后保留可读停留", "note": null},
+    "composition": {"status": "pass", "evidence": "每镜只有一个首要视觉主角", "note": null},
+    "aesthetic": {"status": "pass", "evidence": "human:示范编辑确认使用真实界面和对象关系，无默认科技包装", "note": null},
+    "textDensity": {"status": "pass", "evidence": "human:示范编辑确认只有开场字卡，不重复书写第二句口播", "note": null},
+    "continuity": {"status": "pass", "evidence": "窗口中心与源单元格通过共享几何衔接", "note": null},
+    "brandAssets": {"status": "pass", "evidence": "仅引用登记的真实产品界面素材 ID", "note": null},
+    "audioSync": {"status": "pass", "evidence": "示范时间码已标注，真实成片仍需复核", "note": null},
+    "normalSpeedReview": {"status": "pass", "evidence": "示范记录展示应如何填写；不冒充实际视频批准", "note": null}
+  },
+  "updatedAt": "2026-08-20T00:00:00.000Z"
+}

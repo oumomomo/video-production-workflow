@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "assetId": null,
+  "sourceSha256": null,
+  "status": "missing",
+  "generatedAt": null,
+  "transcript": null,
+  "captions": null,
+  "keyframes": [],
+  "contactSheets": [],
+  "shotMap": [],
+  "tags": [],
+  "humanAnalysis": null,
+  "lowResolutionPreview": null,
+  "rule": "相同 sourceSha256 默认复用分析包；只有真源变化或明确需要时才重新分析原片。"
+}

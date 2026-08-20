@@ -1,8 +1,8 @@
 {
   "name": "video-production-workflow",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "脚本驱动的分镜、自检、优化与视频避雷工作流",
+  "description": "团队可复用的脚本锁定、分镜、自检、素材索引与视频避雷工作流",
   "type": "module",
   "bin": {
     "video-flow": "skills/video-production-workflow/scripts/video-flow.mjs"

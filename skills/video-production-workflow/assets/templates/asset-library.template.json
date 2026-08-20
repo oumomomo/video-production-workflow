@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "libraryId": null,
+  "name": null,
+  "createdAt": null,
+  "updatedAt": null,
+  "storagePolicy": {
+    "catalog": "registry.json",
+    "originals": "external",
+    "derivedAnalysis": "derived/",
+    "rule": "原文件可位于团队存储；注册表只保存可迁移 URI、哈希、权限和使用证据。"
+  },
+  "assets": []
+}

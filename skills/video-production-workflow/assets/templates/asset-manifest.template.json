@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "assets": [],
+  "rules": {
+    "referenceByStableId": true,
+    "noAbsoluteLocalPaths": true,
+    "reviewOnlyIsNotReusable": true,
+    "acceptedInOneProjectIsNotGloballyRecommended": true
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "visualWorld": {
+    "sourceMaterials": [
+      {
+        "id": "brand-real-product-ui-001",
+        "type": "real-product-recording",
+        "source": "team://examples/team-demo/real-product-ui-001.mp4",
+        "evidence": "asset-manifest:brand-real-product-ui-001"
+      },
+      {
+        "id": "motion-object-relay-001",
+        "type": "motion-reference",
+        "source": "team://examples/team-demo/motion-object-relay-001.mp4",
+        "evidence": "asset-manifest:motion-object-relay-001"
+      }
+    ],
+    "continuityMechanism": "真实窗口收拢到源单元格，同一个数据对象继续接力到两个真实工作页面。",
+    "colorSource": {
+      "kind": "real-material",
+      "sourceId": "brand-real-product-ui-001",
+      "evidence": "真实产品界面录屏",
+      "rule": "只使用真实产品界面已有颜色，不增加通用科技配色。"
+    },
+    "genericAIPaletteAllowed": false
+  },
+  "referencePolicy": {
+    "selectedReferences": [
+      {
+        "id": "motion-object-relay-001",
+        "source": "team://examples/team-demo/motion-object-relay-001.mp4",
+        "evidence": "asset-manifest:motion-object-relay-001",
+        "inherit": ["同一对象跨页面接力的运动关系"],
+        "change": ["对象替换为真实单元格和工作页面"],
+        "reject": ["不继承原片品牌、文字和表面配色"]
+      }
+    ],
+    "originalReason": null
+  },
+  "shotBindings": [
+    {
+      "shotId": "A01",
+      "origin": "invent",
+      "materialIds": ["brand-real-product-ui-001"],
+      "referenceIds": [],
+      "originalHypothesis": "让真实窗口收拢到下一镜的几何中心，用对象让位代替解释。"
+    },
+    {
+      "shotId": "A02",
+      "origin": "remix",
+      "materialIds": ["brand-real-product-ui-001", "motion-object-relay-001"],
+      "referenceIds": ["motion-object-relay-001"]
+    }
+  ],
+  "note": "该示例只展示可迁移字段，不包含版权媒体，也不代表实际视频获批。"
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate-awaiting-user-approval",
+  "mediaIncluded": false,
+  "mediaUri": "team://examples/team-demo/candidate-v1.mp4",
+  "scriptSha256": "70ec07dda61de04df8d1b0b944017809c9914e243882ac1a246ee069d0f52b6d",
+  "includesShots": ["A01", "A02"],
+  "note": "公开仓库只演示交接记录，不分发视频二进制，也不把候选冒充最终批准。"
+}
