@@ -1,0 +1,17 @@
+{
+  "name": "video-production-workflow",
+  "version": "0.1.0",
+  "private": true,
+  "description": "脚本驱动的分镜、自检、优化与视频避雷工作流",
+  "type": "module",
+  "bin": {
+    "video-flow": "skills/video-production-workflow/scripts/video-flow.mjs"
+  },
+  "scripts": {
+    "doctor": "node skills/video-production-workflow/scripts/video-flow.mjs doctor",
+    "test": "node tests/test-video-flow.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

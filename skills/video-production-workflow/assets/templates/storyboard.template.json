@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "scriptSegments": [],
+  "shots": [],
+  "rules": {
+    "scriptIsReadOnly": true,
+    "oneSentenceDoesNotEqualOneShot": true,
+    "nonWordCardShotsNeedAVisualEvent": true,
+    "localFeedbackMustNotChangeUnrelatedShots": true
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "视频制作避雷工作流"
+  short_description: "从锁定脚本、分镜自检到精修交付的可复用视频制作流程"
+  default_prompt: "Use $video-production-workflow to turn my locked script into a storyboard, self-check the highest-frequency pitfalls, and optimize it without changing the script."

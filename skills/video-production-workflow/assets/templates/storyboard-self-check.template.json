@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "incomplete",
+  "checks": {
+    "preserveApprovedBaseline": {"status": "pending", "evidence": null, "note": null},
+    "scriptMatch": {"status": "pending", "evidence": null, "note": null},
+    "rhythm": {"status": "pending", "evidence": null, "note": null},
+    "composition": {"status": "pending", "evidence": null, "note": null},
+    "aesthetic": {"status": "pending", "evidence": null, "note": null},
+    "textDensity": {"status": "pending", "evidence": null, "note": null},
+    "continuity": {"status": "pending", "evidence": null, "note": null},
+    "brandAssets": {"status": "pending", "evidence": null, "note": null},
+    "audioSync": {"status": "pending", "evidence": null, "note": null},
+    "normalSpeedReview": {"status": "pending", "evidence": null, "note": null}
+  }
+}
