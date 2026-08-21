@@ -91,7 +91,7 @@ try {
   ], 1);
   if (!aiAestheticPass.stderr.includes('不得由 AI 自行判定通过')) throw new Error('AI aesthetic approval was not blocked');
 
-  for (const id of ['preserveApprovedBaseline', 'scriptMatch', 'visualReferenceContract', 'rhythm', 'composition', 'aesthetic', 'textDensity']) {
+  for (const id of ['preserveApprovedBaseline', 'scriptMatch', 'visualReferenceContract', 'rhythm', 'composition', 'graphicElementPurpose', 'aesthetic', 'textDensity']) {
     const evidence = ['aesthetic', 'textDensity'].includes(id) ? `human:test:${id}` : `test:${id}`;
     run(['check-set', '--project', project, '--id', id, '--status', 'pass', '--evidence', evidence, '--json']);
   }

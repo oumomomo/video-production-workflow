@@ -57,6 +57,7 @@ video-flow status --project ./my-video
 ```bash
 video-flow check-set --project ./my-video --id scriptMatch --status pass --evidence "逐镜核对脚本"
 video-flow check-set --project ./my-video --id rhythm --status pass --evidence "正常速度检查"
+video-flow check-set --project ./my-video --id graphicElementPurpose --status pass --evidence "逐条完成线条三问；删除无职责边框、下划线和连接器"
 video-flow audit --project ./my-video --stage storyboard
 ```
 

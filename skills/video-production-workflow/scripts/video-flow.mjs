@@ -14,6 +14,7 @@ const HARD_CHECKS = [
   'visualReferenceContract',
   'rhythm',
   'composition',
+  'graphicElementPurpose',
   'aesthetic',
   'textDensity',
 ];

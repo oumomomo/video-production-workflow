@@ -1,6 +1,6 @@
 {
   "name": "video-production-workflow",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "团队可复用的脚本锁定、分镜、自检、素材索引与视频避雷工作流",
   "type": "module",
