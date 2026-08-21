@@ -7,7 +7,7 @@
     "visualReferenceContract": {"status": "pending", "evidence": null, "note": "必须先登记真实画面材料、配色来源、所选参考的继承/改变/拒绝项，并绑定全部镜头；真实素材不等于视觉方向已成立"},
     "rhythm": {"status": "pending", "evidence": null, "note": null},
     "composition": {"status": "pending", "evidence": null, "note": null},
-    "aesthetic": {"status": "pending", "evidence": null, "note": "必须由用户或真人剪辑师审阅；允许基于登记真源做忠实动画化，禁止无来源发明界面和状态"},
+    "aesthetic": {"status": "pending", "evidence": null, "note": "先做第一眼前置否决：无来源的 AI 默认包装或草稿感由制作方内部拒收；不得按放大界面、大留白、原生小字等表面形式误判；最终通过仍须用户或真人剪辑师确认"},
     "textDensity": {"status": "pending", "evidence": null, "note": "画面文字默认不新增；例外仅限锁定脚本、真实界面原生文字和必要证据"},
     "continuity": {"status": "pending", "evidence": null, "note": null},
     "brandAssets": {"status": "pending", "evidence": null, "note": null},
